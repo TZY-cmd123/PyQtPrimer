@@ -1,7 +1,8 @@
 #QMessageBox槽函数,弹出交流框
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
-
+#from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QDialog, QLabel, QLineEdit, QPushButton,QGridLayout, QVBoxLayout, QHBoxLayout, QMessageBox
+import face_recognition
 
 class Demo(QWidget):
     def __init__(self):
