@@ -3,16 +3,18 @@ import sys
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 import redis
-import time
 import datetime
+import time
+import easygui
+import cx_Oracle
 
 class Demo(QWidget):
     def __init__(self):
         super(Demo, self).__init__()
         self.v_layout = QVBoxLayout()
-        self.button = QPushButton('用户1', self)
-        self.button1 = QPushButton('用户2', self)
-        self.button2 = QPushButton('用户3', self)
+        self.button = QPushButton('User1', self)
+        self.button1 = QPushButton('User2', self)
+        self.button2 = QPushButton('User3', self)
         self.button_show = QPushButton('展示', self)
         self.button.clicked.connect(self.Mytest1)
         self.button1.clicked.connect(self.Mytest2)
@@ -58,7 +60,7 @@ class Demo(QWidget):
         print("User2相关信息:")
         print(self.MyRedis.get("User2"))
         print(self.MyRedis.hgetall("User2_time"))
-        print("User2相关信息:")
+        print("User3相关信息:")
         print(self.MyRedis.get("User2"))
         print(self.MyRedis.hgetall("User2_time"))
         print("点击时间")
@@ -66,9 +68,11 @@ class Demo(QWidget):
         print("点击时间(小时)")
         print(self.MyRedis.smembers("Click_Time_Hour"))
         print("-------------------------------------------------------")
+        self.MyRedis.close()
 
 
 if __name__ == '__main__':
+    print(cx_Oracle.__version__)
     print(redis.__version__)
     app = QApplication(sys.argv)
     demo = Demo()
