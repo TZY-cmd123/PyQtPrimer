@@ -7,6 +7,9 @@ import datetime
 import time
 import easygui
 import cx_Oracle
+import pymongo
+import pymysql
+
 
 class Demo(QWidget):
     def __init__(self):
