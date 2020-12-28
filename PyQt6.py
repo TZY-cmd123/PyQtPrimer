@@ -1,11 +1,12 @@
+#整个花活
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QTextEdit, QTextBrowser, QHBoxLayout, QVBoxLayout
 
 class Demo(QWidget):
     def __init__(self):
         super(Demo, self).__init__()
-        self.edit_label = QLabel('QTextEdit', self)#编辑框
-        self.browser_label = QLabel('QTextBrowser', self)#输出框
+        self.edit_label = QLabel('输入栏', self)#编辑框
+        self.browser_label = QLabel('同步倒叙输出', self)#输出框
         self.text_edit = QTextEdit(self)
         self.text_browser = QTextBrowser(self)
 
@@ -32,7 +33,7 @@ class Demo(QWidget):
         self.text_edit.textChanged.connect(self.show_text_func)  # 1
 
     def show_text_func(self):
-        self.text_browser.setText(self.text_edit.toPlainText())  # 2
+        self.text_browser.setText(self.text_edit.toPlainText()[::-1])  # 2
 
 
 if __name__ == '__main__':
