@@ -2,9 +2,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QLineEdit, QHBoxLayout, QPushButton, QGridLayout
 from PyQt5.QtWidgets import QDialog, QLineEdit, QPushButton,QGridLayout, QVBoxLayout, QHBoxLayout, QMessageBox
-
 import pymysql
-
 class MyDemo2(QWidget):
 
     def __init__(self):
